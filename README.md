@@ -1,3 +1,3 @@
 # Recipe-Keeper
 Search and Try recipes at home. 
-![logo](material/logos/5.png)
+![logo](material/logos/5.2.png)
