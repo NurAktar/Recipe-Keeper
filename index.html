@@ -1,127 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/index.css"/>
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
-    <!-- MDB -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css" rel="stylesheet"/>
-    <title>Recipe Keeper</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/index.css"/>
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet"/>
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.css" rel="stylesheet"/>
+  <title>Recipe Keeper</title>
 </head>
 <body>
-    <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-light p-4 dark-mode">
-            <h5 class=" h4">Collapsed content</h5>
-            <span class="text-muted">Toggleable via the navbar brand.</span>
+  <!-- modal start -->
+  <!-- First modal dialog -->
+  <div class="modal fade" id="modallogin" aria-hidden="true" aria-labelledby="modalloginlabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalloginlabel">Login</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <form>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="form2Example1" class="form-control" />
+              <label class="form-label" for="form2Example1">Email address</label>
+            </div>
+            
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input type="password" id="form2Example2" class="form-control" />
+              <label class="form-label" for="form2Example2">Password</label>
+            </div>
+            
+            <!-- 2 column grid layout for inline styling -->
+            <div class="row mb-4">
+              <div class="col d-flex justify-content-center">
+                <!-- Checkbox -->
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="form2Example34" checked />
+                  <label class="form-check-label" for="form2Example34"> Remember me </label>
+                </div>
+              </div>
+              
+              <div class="col">
+                <!-- Simple link -->
+                <a href="#!">Forgot password?</a>
+              </div>
+            </div>
+            
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <p>not a member yet?</p>
+          <a class="link cursor-pointer" data-mdb-target="#modalregister" data-mdb-toggle="modal" data-mdb-dismiss="modal">
+            Register
+          </a>
+        </div>
+      </div>
     </div>
-    <nav class="navbar navbar-dark d-flex flex-row px-3 dark-mode">
-        <div class="d-flex">
-            <button style="color: tomato"
-            class="navbar-toggler"
-            type="button"
-            data-mdb-toggle="collapse"
-            data-mdb-target="#navbarToggleExternalContent"
-            aria-controls="navbarToggleExternalContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="ms-2"><img height="30px" src="material/logos/5.png" alt="logo"/></div>
+  </div>
+  <!-- Second modal dialog -->
+  <div class="modal fade" id="modalregister" aria-hidden="true" aria-labelledby="modalregisterlabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalregisterlabel">Register</h5>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="d-flex align-items-center">
-            <button onclick="darkmode()" class="darkmodebtn"><i class="fas fa-moon"></i></button>
-            <button onclick="lightmode()" class="lightmodebtn"><i class="far fa-lightbulb"></i></button>
-            <a href="login/index.html"> <button type="button" class="btn btn-link px-3 me-2">Login</button></a>
-            <button type="button" class="btn btn-primary me-3">Sign up for free</button>
-            <a class="btn btn-dark px-3" href="https://github.com/NurAktar/Recipe-Keeper" role="button"><i class="fab fa-github"></i></a>
+        <div class="modal-body">
+          <form>
+            <!-- usernames input -->
+            <div class="form-outline mb-4">
+              <input type="text" id="username" class="form-control" />
+              <label class="form-label" for="username">First name</label>
+            </div>
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input type="password" id="password" class="form-control" />
+              <label class="form-label" for="password">Password</label>
+            </div>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="email" id="email" class="form-control" />
+              <label class="form-label" for="email">Email address</label>
+            </div>
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+          </form>
         </div>
-    </nav>
-    <div class="searchbar">
-      <form class="d-flex input-group w-auto">
-          <input
-            type="search"
-            class="form-control"
-            placeholder="Search Recipe"
-            aria-label="Search"
-          />
-          <button
-            class="btn btn-outline-primary"
-            type="button"
-            data-mdb-ripple-color="dark"
-          >
-            Search
+        <div class="modal-footer">
+          <p>Already a user?</p>
+          <button class="btn btn-primary" data-mdb-target="#modallogin" data-mdb-toggle="modal">
+            LogIn
           </button>
-        </form>
+        </div>
+      </div>
     </div>
-    <div class="wraper-cards container d-flex flex-wrap justify-content-around">
-        <div class="recipe-card">
-            <span>2 Min Cook</span>
-            <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,cook" alt="Fissure in Sandstone"/>
-            <div>
-              <h5 class="card-title">Maggie Soup</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#!" class="btn btn-primary" style="background-color: #74851c;">Cook</a>
-            </div>
-        </div>
-        <div class="recipe-card">
-            <span>2 Min Cook</span>
-            <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,food" alt="Fissure in Sandstone"/>
-            <div>
-              <h5 class="card-title">Hakka Noodles Recipe</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#!" class="btn btn-primary">Cook</a>
-            </div>
-        </div>
-        <div class="recipe-card">
-            <span>2 Min Cook</span>
-            <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,recipe" alt="Fissure in Sandstone"/>
-            <div>
-              <h5 class="card-title">Chowmin</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#!" class="btn btn-primary">Cook</a>
-            </div>
-        </div>
-        <div class="recipe-card">
-            <span>2 Min Cook</span>
-            <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,cooking" alt="Fissure in Sandstone"/>
-            <div>
-              <h5 class="card-title">Pasta Recipe</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#!" class="btn btn-primary">Cook</a>
-            </div>
-        </div>
-        <div class="recipe-card">
-            <span>2 Min Cook</span>
-            <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,veg" alt="Fissure in Sandstone"/>
-            <div>
-              <h5 class="card-title">Chicken Soup</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#!" class="btn btn-primary">Cook</a>
-            </div>
-        </div>
-        <div class="recipe-card">
-            <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,tomato" alt="Fissure in Sandstone"/>
-            <div>
-              <h5 class="card-title">Chili Chicken</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#!" class="btn btn-primary">Cook</a>
-            </div>
-        </div>
-        <div class="recipe-card">
-            <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,tomato" alt="Fissure in Sandstone"/>
-            <div>
-              <h5 class="card-title">Egg roll</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#!" class="btn btn-primary">Cook</a>
-            </div>
-        </div>
+  </div>
+  <!-- modal ended -->
+  
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-light p-4 dark-mode">
+      <h5 class=" h4">Collapsed content</h5>
+      <span class="text-muted">Toggleable via the navbar brand.</span>
     </div>
+  </div>
+  <nav class="navbar navbar-dark d-flex flex-row px-3 dark-mode">
+    <div class="d-flex">
+      <button style="color: tomato"
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarToggleExternalContent"
+      aria-controls="navbarToggleExternalContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="ms-2"><img height="30px" src="material/logos/5.png" alt="logo"/></div>
+  </div>
+  <div class="d-flex align-items-center">
+    <button onclick="darkmode()" class="darkmodebtn"><i class="fas fa-moon"></i></button>
+    <button onclick="lightmode()" class="lightmodebtn"><i class="far fa-lightbulb"></i></button>
+    <button data-mdb-toggle="modal" href="#modallogin" type="button" class="btn btn-link px-3 me-2">Login</button>
+    <button data-mdb-toggle="modal" href="#modalregister" type="button" class="btn btn-primary me-3">Sign up for free</button>
+    <a class="btn btn-dark px-3" href="https://github.com/NurAktar/Recipe-Keeper" role="button"><i class="fab fa-github"></i></a>
+  </div>
+</nav>
+<div class="searchbar">
+  <form class="d-flex input-group w-auto">
+    <input
+    type="search"
+    class="form-control"
+    placeholder="Search Recipe"
+    aria-label="Search"
+    />
+    <button
+    class="btn btn-outline-primary"
+    type="button"
+    data-mdb-ripple-color="dark"
+    >
+    Search
+  </button>
+</form>
+</div>
+<div class="wraper-cards container d-flex flex-wrap justify-content-around">
+  <div class="recipe-card">
+    <span>2 Min Cook</span>
+    <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,cook" alt="Fissure in Sandstone"/>
+    <div>
+      <h5 class="card-title">Maggie Soup</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#!" class="btn btn-primary" style="background-color: #74851c;">Cook</a>
+    </div>
+  </div>
+  <div class="recipe-card">
+    <span>2 Min Cook</span>
+    <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,food" alt="Fissure in Sandstone"/>
+    <div>
+      <h5 class="card-title">Hakka Noodles Recipe</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#!" class="btn btn-primary">Cook</a>
+    </div>
+  </div>
+  <div class="recipe-card">
+    <span>2 Min Cook</span>
+    <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,recipe" alt="Fissure in Sandstone"/>
+    <div>
+      <h5 class="card-title">Chowmin</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#!" class="btn btn-primary">Cook</a>
+    </div>
+  </div>
+  <div class="recipe-card">
+    <span>2 Min Cook</span>
+    <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,cooking" alt="Fissure in Sandstone"/>
+    <div>
+      <h5 class="card-title">Pasta Recipe</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#!" class="btn btn-primary">Cook</a>
+    </div>
+  </div>
+  <div class="recipe-card">
+    <span>2 Min Cook</span>
+    <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,veg" alt="Fissure in Sandstone"/>
+    <div>
+      <h5 class="card-title">Chicken Soup</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#!" class="btn btn-primary">Cook</a>
+    </div>
+  </div>
+  <div class="recipe-card">
+    <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,tomato" alt="Fissure in Sandstone"/>
+    <div>
+      <h5 class="card-title">Chili Chicken</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#!" class="btn btn-primary">Cook</a>
+    </div>
+  </div>
+  <div class="recipe-card">
+    <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,tomato" alt="Fissure in Sandstone"/>
+    <div>
+      <h5 class="card-title">Egg roll</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#!" class="btn btn-primary">Cook</a>
+    </div>
+  </div>
+</div>
 </body>
 <!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"></script>
