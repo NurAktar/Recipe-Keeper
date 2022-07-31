@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&family=Jost:wght@300&family=PT+Serif:ital@1&family=Raleway&family=Sacramento&family=Ubuntu:wght@300&display=swap');
+
+nav{
+    background-color: #fff;
+}
 .darkmodebtn{
     display:block;
     border: none;
     background:none;
-    padding:0 5px;
+    padding:0 6px;
 }
 .darkmodebtn:hover{
     color: #0059ff;
@@ -12,11 +17,49 @@
     border: none;
     background:none;
     color: #fff;
-    padding:0 5px;
+    padding:0 8px;
 }
 .lightmodebtn:hover{
     color: #ea6227;
 }
 .dark-mode{
     transition: 0.3s;
+}
+.recipe-card{
+    overflow: hidden;
+    margin:7px;
+    display:flex;
+    flex-direction: row;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: black 7px 7px 21px -16px;
+}
+.recipe-card span{
+    position: absolute;
+    font-size: xx-large;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    color: white;
+    font-family: 'Sacramento', cursive;
+    writing-mode: vertical-rl;
+    /* text-orientation: upright; */
+}
+.recipe-card img{
+    width:90px;
+    object-fit: cover;
+}
+.recipe-card div{
+    padding: 15px;
+    width: 250px;
+}
+.recipe-card div p{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.wraper-cards{
+    margin:20px 0;
 }
