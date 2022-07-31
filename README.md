@@ -6,6 +6,6 @@ Search and Try recipes at home.
 
 <hr/>
 
-# Screenshot of July 31 2022
+# Overview
 
-![image](https://user-images.githubusercontent.com/84139612/182031516-ba4dafb7-8a49-4430-b4d5-6df78fdf4588.png)
+![image](https://github.com/NurAktar/Recipe-Keeper/blob/main/material/logos/overview.png)
