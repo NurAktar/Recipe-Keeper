@@ -74,3 +74,7 @@ nav{
 .dark-bg{
     background-color: #3a3a3a;
 }
+.searchbar{
+    margin:31px auto;
+    width:700px;
+}
