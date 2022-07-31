@@ -15,14 +15,14 @@
 </head>
 <body>
     <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-4">
-            <h5 class="text-white h4">Collapsed content</h5>
+        <div class="bg-light p-4 dark-mode">
+            <h5 class=" h4">Collapsed content</h5>
             <span class="text-muted">Toggleable via the navbar brand.</span>
         </div>
     </div>
-    <nav class="navbar navbar-dark bg-dark d-flex flex-row px-3">
+    <nav class="navbar navbar-dark d-flex flex-row px-3 dark-mode">
         <div class="d-flex">
-            <button
+            <button style="color: tomato"
             class="navbar-toggler"
             type="button"
             data-mdb-toggle="collapse"
@@ -35,12 +35,15 @@
             <div class="ms-2"><img height="30px" src="material/logos/5.png" alt="logo"/></div>
         </div>
         <div class="d-flex align-items-center">
+            <button onclick="darkmode()" class="darkmodebtn"><i class="fas fa-moon"></i></button>
+            <button onclick="lightmode()" class="lightmodebtn"><i class="far fa-lightbulb"></i></button>
             <button type="button" class="btn btn-link px-3 me-2">Login</button>
             <button type="button" class="btn btn-primary me-3">Sign up for free</button>
-            <a class="btn btn-dark px-3" style="background-color: #5731c9;" href="https://github.com/NurAktar/Recipe-Keeper" role="button"><i class="fab fa-github"></i></a>
+            <a class="btn btn-dark px-3" href="https://github.com/NurAktar/Recipe-Keeper" role="button"><i class="fab fa-github"></i></a>
         </div>
     </nav>
 </body>
 <!-- MDB -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"></script>
+<script type="text/javascript" src="assets/js/index.js"></script>
 </html>

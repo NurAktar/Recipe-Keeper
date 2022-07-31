@@ -1,3 +1,22 @@
-.gitlogo{
-    background-color: aliceblue;
+.darkmodebtn{
+    display:block;
+    border: none;
+    background:none;
+    padding:0 5px;
+}
+.darkmodebtn:hover{
+    color: #0059ff;
+}
+.lightmodebtn{
+    display:none;
+    border: none;
+    background:none;
+    color: #fff;
+    padding:0 5px;
+}
+.lightmodebtn:hover{
+    color: #ea6227;
+}
+.dark-mode{
+    transition: 0.3s;
 }
