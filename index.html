@@ -15,91 +15,56 @@
 </head>
 <body>
   <!-- modal start -->
-  <!-- First modal dialog -->
-  <div class="modal fade" id="modallogin" aria-hidden="true" aria-labelledby="modalloginlabel" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
+  <!-- Login Modal -->
+  <div class="modal top fade" id="modallogin" tabindex="-1" aria-labelledby="modalloginlabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+    <div class="modal-dialog modal-fullscreen ">
+      <div class="modal-content modal-bg">
+        <div style="border: none;color:#fff" class="modal-header">
           <h5 class="modal-title" id="modalloginlabel">Login</h5>
-          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="btn-close bg-super-light" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form>
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input type="email" id="form2Example1" class="form-control" />
-              <label class="form-label" for="form2Example1">Email address</label>
-            </div>
-            
-            <!-- Password input -->
-            <div class="form-outline mb-4">
-              <input type="password" id="form2Example2" class="form-control" />
-              <label class="form-label" for="form2Example2">Password</label>
-            </div>
-            
-            <!-- 2 column grid layout for inline styling -->
-            <div class="row mb-4">
-              <div class="col d-flex justify-content-center">
-                <!-- Checkbox -->
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="form2Example34" checked />
-                  <label class="form-check-label" for="form2Example34"> Remember me </label>
-                </div>
-              </div>
-              
-              <div class="col">
-                <!-- Simple link -->
-                <a href="#!">Forgot password?</a>
-              </div>
-            </div>
-            
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
-          </form>
+          <div class="wraper-login">
+          <div class="loginbox">
+            <img src="login/default.png" class="avatar">
+            <h1>Sign-In</h1>
+            <from>
+              <p> Email-id</p>
+              <input type="text" name="" placeholder="Enter Email id">
+              <p> Username </p>
+              <input type="text" name="" placeholder="enter username">
+              <p> Password </p>
+              <input type="text" name="" placeholder="Enter password"><br><br>
+              <input type="submit" name="" value="login"><br>
+              <!--<a href="#"> Lost your password? </a><br>--->
+              <b><a href="#"> Register Here </a></b>
+            </from>
+          </div>
         </div>
-        <div class="modal-footer">
-          <p>not a member yet?</p>
-          <a class="link cursor-pointer" data-mdb-target="#modalregister" data-mdb-toggle="modal" data-mdb-dismiss="modal">
-            Register
-          </a>
+        </div>
+        <div style="border: none;" class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+            Close
+          </button>
+          <button type="button" class="btn btn-primary" data-mdb-dismiss="modal" data-mdb-toggle="modal" data-mdb-target="#modalregister">Register</button>
         </div>
       </div>
     </div>
   </div>
-  <!-- Second modal dialog -->
-  <div class="modal fade" id="modalregister" aria-hidden="true" aria-labelledby="modalregisterlabel" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
+  <!-- Register Modal -->
+  <div class="modal top fade" id="modalregister" tabindex="-1" aria-labelledby="modalregisterlabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+    <div class="modal-dialog modal-fullscreen ">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="modalregisterlabel">Register</h5>
           <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <form>
-            <!-- usernames input -->
-            <div class="form-outline mb-4">
-              <input type="text" id="username" class="form-control" />
-              <label class="form-label" for="username">First name</label>
-            </div>
-            <!-- Password input -->
-            <div class="form-outline mb-4">
-              <input type="password" id="password" class="form-control" />
-              <label class="form-label" for="password">Password</label>
-            </div>
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input type="email" id="email" class="form-control" />
-              <label class="form-label" for="email">Email address</label>
-            </div>
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
-          </form>
-        </div>
+        <div class="modal-body">...</div>
         <div class="modal-footer">
-          <p>Already a user?</p>
-          <button class="btn btn-primary" data-mdb-target="#modallogin" data-mdb-toggle="modal">
-            LogIn
+          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+            Close
           </button>
+          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
@@ -129,8 +94,8 @@
   <div class="d-flex align-items-center">
     <button onclick="darkmode()" class="darkmodebtn"><i class="fas fa-moon"></i></button>
     <button onclick="lightmode()" class="lightmodebtn"><i class="far fa-lightbulb"></i></button>
-    <button data-mdb-toggle="modal" href="#modallogin" type="button" class="btn btn-link px-3 me-2">Login</button>
-    <button data-mdb-toggle="modal" href="#modalregister" type="button" class="btn btn-primary me-3">Sign up for free</button>
+    <button data-mdb-toggle="modal" data-mdb-target="#modallogin" type="button" class="btn btn-link px-3 me-2">Login</button>
+    <button data-mdb-toggle="modal" data-mdb-target="#modalregister" type="button" class="btn btn-primary me-3">Sign up for free</button>
     <a class="btn btn-dark px-3" href="https://github.com/NurAktar/Recipe-Keeper" role="button"><i class="fab fa-github"></i></a>
   </div>
 </nav>
