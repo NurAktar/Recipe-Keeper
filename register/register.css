@@ -12,7 +12,7 @@ body{
   align-items: center;
   padding: 10px;
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
-  background: url(img/image3.jpg);
+  background: url(imge/image3.jpg);
 }
 .container{
   max-width: 700px;
