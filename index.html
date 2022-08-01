@@ -37,7 +37,7 @@
               <input type="text" name="" placeholder="Enter password"><br><br>
               <input type="submit" name="" value="login"><br>
               <!--<a href="#"> Lost your password? </a><br>--->
-              <b><a href="#"> Register Here </a></b>
+              <b><a href="register/register.html"> Register Here </a></b>
             </from>
           </div>
         </div>
@@ -51,7 +51,7 @@
       </div>
     </div>
   </div>
-  <!-- Register Modal -->
+  <!-- Register Model -->
   <div class="modal top fade" id="modalregister" tabindex="-1" aria-labelledby="modalregisterlabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
     <div class="modal-dialog modal-fullscreen ">
       <div class="modal-content">
@@ -69,7 +69,7 @@
       </div>
     </div>
   </div>
-  <!-- modal ended -->
+  <!-- model ended -->
   
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-light p-4 dark-mode">
@@ -95,7 +95,7 @@
     <button onclick="darkmode()" class="darkmodebtn"><i class="fas fa-moon"></i></button>
     <button onclick="lightmode()" class="lightmodebtn"><i class="far fa-lightbulb"></i></button>
     <button data-mdb-toggle="modal" data-mdb-target="#modallogin" type="button" class="btn btn-link px-3 me-2">Login</button>
-    <button data-mdb-toggle="modal" data-mdb-target="#modalregister" type="button" class="btn btn-primary me-3">Sign up for free</button>
+    <a href="register/register.html"><button data-mdb-toggle="modal" data-mdb-target="#modalregister" type="button" class="btn btn-primary me-3">Sign up for free</button></a>
     <a class="btn btn-dark px-3" href="https://github.com/NurAktar/Recipe-Keeper" role="button"><i class="fab fa-github"></i></a>
   </div>
 </nav>
@@ -119,7 +119,7 @@
 <div class="wraper-cards container d-flex flex-wrap justify-content-around">
   <div class="recipe-card">
     <span>2 Min Cook</span>
-    <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,cook" alt="Fissure in Sandstone"/>
+    <img src="img/maggi.jpeg" alt="Fissure in Sandstone"/>
     <div>
       <h5 class="card-title">Maggie Soup</h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -128,7 +128,7 @@
   </div>
   <div class="recipe-card">
     <span>2 Min Cook</span>
-    <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,food" alt="Fissure in Sandstone"/>
+    <img src="img/hakka.jpg" alt="Fissure in Sandstone"/>
     <div>
       <h5 class="card-title">Hakka Noodles Recipe</h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -137,16 +137,16 @@
   </div>
   <div class="recipe-card">
     <span>2 Min Cook</span>
-    <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,recipe" alt="Fissure in Sandstone"/>
+    <img src="img/chowmein.jpg" alt="Fissure in Sandstone"/>
     <div>
-      <h5 class="card-title">Chowmin</h5>
+      <h5 class="card-title">Chowmein</h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <a href="#!" class="btn btn-primary">Cook</a>
     </div>
   </div>
   <div class="recipe-card">
     <span>2 Min Cook</span>
-    <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,cooking" alt="Fissure in Sandstone"/>
+    <img src="img/pasta.jpg" alt="Fissure in Sandstone"/>
     <div>
       <h5 class="card-title">Pasta Recipe</h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -155,7 +155,7 @@
   </div>
   <div class="recipe-card">
     <span>2 Min Cook</span>
-    <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,veg" alt="Fissure in Sandstone"/>
+    <img src="img/chcn-soup.jpg" alt="Fissure in Sandstone"/>
     <div>
       <h5 class="card-title">Chicken Soup</h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -163,7 +163,7 @@
     </div>
   </div>
   <div class="recipe-card">
-    <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,tomato" alt="Fissure in Sandstone"/>
+    <img src="img/chili-chicken.jpg" alt="Fissure in Sandstone"/>
     <div>
       <h5 class="card-title">Chili Chicken</h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -171,9 +171,27 @@
     </div>
   </div>
   <div class="recipe-card">
-    <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,tomato" alt="Fissure in Sandstone"/>
+    <img src="img/egg-roll.jpg" alt="Fissure in Sandstone"/>
     <div>
-      <h5 class="card-title">Egg roll</h5>
+      <h5 class="card-title">Egg Roll</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#!" class="btn btn-primary">Cook</a>
+    </div>
+  </div>
+  <div class="recipe-card">
+    <span>2 Min Cook</span>
+    <img src="img/chcn-popcorn.jpg" alt="Fissure in Sandstone"/>
+    <div>
+      <h5 class="card-title">Chicken popcorn</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#!" class="btn btn-primary">Cook</a>
+    </div>
+  </div>
+  <div class="recipe-card">
+    <span>2 Min Cook</span>
+    <img src="img/biryani.jpg" alt="Fissure in Sandstone"/>
+    <div>
+      <h5 class="card-title">Biryani</h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <a href="#!" class="btn btn-primary">Cook</a>
     </div>
