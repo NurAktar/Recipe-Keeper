@@ -38,19 +38,22 @@ nav{
     transition: 0.1s;
 }
 .recipe-card span{
+    z-index: 2;
     position: absolute;
+    height: fit-content;
     font-size: xx-large;
     display: flex;
     align-self: center;
     justify-self: center;
     color: white;
-    font-family: 'Sacramento', cursive;
+    font-family: fantasy;
     writing-mode: vertical-rl;
     /* text-orientation: upright; */
 }
 .recipe-card img{
     width:90px;
     object-fit: cover;
+    filter: saturate(2) blur(1px) brightness(0.8);
 }
 .recipe-card div{
     padding: 15px;
