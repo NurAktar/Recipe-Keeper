@@ -2,7 +2,7 @@
   $sname = "localhost";
   $uname = "root";
   $password = "";
-  $db_name = "searchlist";
+  $db_name = "recipe_keeper";
 
   $conn = mysqli_connect($sname, $uname, $password, $db_name);
 

@@ -101,15 +101,15 @@
   </div>
 </nav>
 <div class="searchbar">
-  <form  class="d-flex input-group w-auto">
-    <input autocomplete="off" id="searchq" name="search_box" onkeyup="javascript:load_data(this.value)" type="search" class="form-control" placeholder="Search Recipe" aria-label="Search"/>
-    <button class="btn" type="button" data-mdb-ripple-color="dark">Search</button>
-  </form>
+  <div class="d-flex input-group w-auto">
+    <input autocomplete="off" id="searchq" name="search_box" type="search" class="form-control" placeholder="Search Recipe" aria-label="Search"/>
+    <button class="btn" onclick="javascript:searched()" type="button" data-mdb-ripple-color="dark">Search</button>
+  </div>
   <div style="position: relative;">
     <span id="search_result"></span>
   </div>
 </div>
-<div class="wraper-cards container d-flex flex-wrap justify-content-around">
+<div id="recipe_card_wraper" class="wraper-cards container d-flex flex-wrap justify-content-around">
   <div class="recipe-card">
     <span>2 Min Cook</span>
     <img src="https://source.unsplash.com/random/1920x1080/?wallpaper,cook" alt="Fissure in Sandstone"/>
