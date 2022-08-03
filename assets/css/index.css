@@ -91,10 +91,19 @@ nav{
     background-color: #90b833;
     color:#fff;
 }
+.dark-mode h3{
+    background-color: #0059ff;
+    color:#f0f8ff;
+}
+.dark-mode h3:hover{
+    background-color: #0059ff;
+    color:#f0f8ff;
+}
 #search_result{
     position: absolute;
     width: 100%;
 }
+
 /* login css */
 .modal-bg{
     background-image: url("../../login/image2.jpg");
@@ -179,3 +188,4 @@ font-size: 16px;
 
     color: #ffc107;
 }
+
