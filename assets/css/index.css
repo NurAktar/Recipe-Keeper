@@ -58,6 +58,7 @@ nav{
 }
 .recipe-card div p{
     overflow: hidden;
+    height: 76.78px;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -90,7 +91,6 @@ nav{
     background-color: #90b833;
     color:#fff;
 }
-
 .dark-mode h3{
     background-color: #0059ff;
     color:#f0f8ff;
@@ -99,7 +99,10 @@ nav{
     background-color: #0059ff;
     color:#f0f8ff;
 }
-
+#search_result{
+    position: absolute;
+    width: 100%;
+}
 
 /* login css */
 .modal-bg{
@@ -121,30 +124,24 @@ nav{
 }
 
 .avatar{
-
     width: 100px;
     height: 100px;
     border-radius: 50%;
     position: absolute;
     top: -50px;
     left: calc(50% - 50px);
-
-    
 }
 .loginbox h1{
     margin: 0;
     padding: 0 0 20px;
     text-align: center;
     font-size: 22px;
-
 }
 
 .loginbox p{
-        margin: 0;
-        padding: 0;
-        font-weight: bold;
-
-
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
  }
 .loginbox input{
     width: 100%;
