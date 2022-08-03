@@ -58,6 +58,7 @@ nav{
 }
 .recipe-card div p{
     overflow: hidden;
+    height: 76.78px;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 3;
