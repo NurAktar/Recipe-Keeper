@@ -38,7 +38,7 @@ nav{
     transition: 0.1s;
 }
 .recipe-card span{
-    z-index: 2;
+    z-index: 1;
     position: absolute;
     height: fit-content;
     font-size: xx-large;
@@ -105,6 +105,7 @@ nav{
 #search_result{
     position: absolute;
     width: 100%;
+    z-index: 2;
 }
 
 /* login css */
@@ -187,3 +188,49 @@ font-size: 16px;
     color: #ffc107;
 }
 
+/* show recipe css here */
+.recipe_view{
+    border-radius: 17px;
+    width: 100%;
+    height: 700px;
+    /* background-color: #f3f3f3; */
+    box-shadow:black 4px 4px 20px -10px;
+    backdrop-filter: blur(6px);
+}
+.banner{
+    position:absolute;
+    left: 0;
+    height: 250px;
+    width: 100%;
+    background-image: url("https://images.unsplash.com/photo-1490818387583-1baba5e638af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80");
+    background-position: center;
+    background-size:cover;
+}
+.banner_name{
+    background: crimson;
+    color: ghostwhite;
+    font-size: 37px;
+    font-family: 'Ubuntu';
+    font-weight: 600;
+    padding:40px;
+    /* background-image: url("https://images.unsplash.com/photo-1658307821614-4ffbb8cb4e7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"); */
+    background-image: url("https://images.unsplash.com/photo-1539136788836-5699e78bfc75?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    background-size: cover;
+    background-position: center;
+    border-radius: 17px 17px 0 0;
+}
+.banner_name h6{
+    font-weight: 700;
+}
+.process{
+    padding: 35px 35px 0 35px;
+    font-size: 30px;
+    font-family: fantasy;
+}
+.process span{
+    font-size: 25px;
+    font-family: sans-serif;
+}
+.recipe_body{
+    background-image: url("https://img.freepik.com/free-vector/cactus-pattern-collection-concept_23-2148625237.jpg?w=740&t=st=1659692137~exp=1659692737~hmac=0021749902f4d56ac129fb526e679e7cdfed98faf62f26346c0f1462fb590887");
+}

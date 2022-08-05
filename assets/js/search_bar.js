@@ -34,6 +34,7 @@ document.getElementsByClassName("searchbar")[0].addEventListener("keydown",(e)=>
 // After searched // after pressed enter
 function searched(){
     var query = document.getElementById("searchq").value;
+    search_up(query);
     if(query.length > 0){
         var form_data = new FormData();
         form_data.append('query',query);
