@@ -86,7 +86,7 @@ nav{
     width:700px;
 }
 .searchbar button{
-    background-color: #65789b;
+    background-color: #7167ff;
     color: #f0f8ff;
     margin-left: -1px;
 }
@@ -233,4 +233,13 @@ font-size: 16px;
 }
 .recipe_body{
     background-image: url("https://img.freepik.com/free-vector/cactus-pattern-collection-concept_23-2148625237.jpg?w=740&t=st=1659692137~exp=1659692737~hmac=0021749902f4d56ac129fb526e679e7cdfed98faf62f26346c0f1462fb590887");
+}
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 222px;
+    width: 100%;
+    background-color: #1e1e1e;
+    color:#fff;
 }

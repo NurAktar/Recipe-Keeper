@@ -23,6 +23,7 @@ function lightmode(){
         recipecard[i].classList.toggle("recipe-div-dark");
     }
 }
+
 //show recipe ../ open recipe id
 function show_recipe(id){
     let query = id;
@@ -41,6 +42,23 @@ function show_recipe(id){
     }
 }
 
+//homepage content loading
+function homepage_content(){
+    // load recipe cards..
+    let home = 'homepage';
+    var form_data = new FormData();
+    form_data.append('home',home);
+    var ajax_request = new XMLHttpRequest();
+    ajax_request.open('POST','assets/pages/homepage.php');
+    ajax_request.send(form_data);
+    ajax_request.onreadystatechange = function(){
+        if(ajax_request.readyState == 4 && ajax_request.status == 200){
+            var response = ajax_request.responseText;
+            document.getElementById('recipe_card_wraper').innerHTML = response;
+            document.getElementById('search_result').innerHTML = '';
+        }
+    }
+}
 
 //history managing..
 function urlcheck(){
@@ -82,6 +100,9 @@ function urlcheck(){
         else{
             document.getElementById('recipe_card_wraper').innerHTML = 'Try something new today :)';
         }
+    }
+    else{
+        homepage_content();
     }
 }
 
