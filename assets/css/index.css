@@ -10,6 +10,7 @@ nav{
     border: none;
     background:none;
     padding:0 6px;
+    margin-right: 5px;
 }
 .darkmodebtn:hover{
     color: #0059ff;
@@ -20,6 +21,7 @@ nav{
     background:none;
     color: #fff;
     padding:0 8px;
+    margin-right: 5px;
 }
 .lightmodebtn:hover{
     color: #ea6227;
@@ -31,6 +33,7 @@ nav{
     overflow: hidden;
     margin:7px;
     display:flex;
+    align-self: flex-start;
     flex-direction: row;
     background-color: #fff;
     border-radius: 5px;
@@ -72,6 +75,7 @@ nav{
 }
 .wraper-cards{
     margin:20px 0;
+    min-height: calc(100vh - 392.27px);
 }
 /* recipe dark mode */
 .recipe-div-dark{

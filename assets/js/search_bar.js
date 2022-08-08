@@ -3,13 +3,15 @@ function get_text(e){
     var s_text = e.textContent;
     document.getElementById("searchq").value = s_text;
     document.getElementById("search_result").innerHTML = '';
-    document.getElementById("searchq").focus();
+    // document.getElementById("searchq").focus();
+    searched();
 }
 
 // move focus aerokeys
 var keycount = -1;
 document.getElementsByClassName("searchbar")[0].addEventListener("keydown",(e)=>{
     var el_len = document.querySelectorAll(".move").length-1;
+    var query = document.getElementById("searchq").value;
     if(e.key == "ArrowDown"){
         keycount++;
         if(keycount > el_len){
@@ -30,6 +32,11 @@ document.getElementsByClassName("searchbar")[0].addEventListener("keydown",(e)=>
         keycount = -1;
     }
 });
+
+//defocus of search result..
+document.addEventListener("click",()=>{if(document.querySelectorAll(".move").length > 0){
+    document.getElementById("search_result").innerHTML = '';
+}});
 
 // After searched // after pressed enter
 function searched(){

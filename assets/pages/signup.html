@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  <!-- style here -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu&family=Poppins:wght@400&display=swap');
+    *{
+      font-family:Ubuntu;
+      padding:0;
+      margin:0;
+      box-sizing:border-box;
+    }
+    .container{
+      background-image: url('../img/bgsmall.jpg');
+      background-size: cover;
+      background-position: 47% 50%;
+      width:100vw;
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+    }
+    .wrapper h3{
+      position: relative;
+      color:#173c4f;
+      left:0;
+      top:-7px;
+      /* transform:translate(-60px,-20px); */
+    }
+    #formcontrol{
+      display:flex;
+      flex-direction:column;
+      font-size:13px;
+      text-align: right;
+    }
+    #formcontrol input{
+      background:transparent;
+      padding:7px;
+      width:245px;
+      margin:9px 0;
+      outline: none;
+      border: none;
+      color:#0a4a55;
+      border-bottom: 1px solid #9ff9f4;
+      font-family:Ubuntu;
+      font-size: 13px;
+      font-weight: ;
+    }
+    #formcontrol input:focus{
+      color:#0068e2;
+      border-bottom: 1px solid #0068e2;
+    }
+    #formcontrol button{
+      padding: 9px;
+      margin: 15px 0;
+      width: 245px;
+      font-size: 15px;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      background-color: #0068e2;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+    #formcontrol button:hover{
+      background-color:#0075ff;
+    }
+    #forgot{
+      font-family: Poppins;
+      color:#0068e2;
+      cursor:pointer;
+    }
+    #forgot:hover{
+      color:red;
+    }
+    #signup_page{
+      display:none;
+      cursor:pointer;
+    }
+    #signup_page:hover{
+      color:green;
+    }
+    #reset{
+      display:none;
+    }
+    #formcontrol #reset:hover{
+        background-color:#e82020;
+    }
+    .footer{
+      cursor: pointer;
+      font-family: Poppins;
+      font-size: 14px;
+      position: absolute;
+      width: 117px;
+      height: 20px;
+      margin: 0 auto;
+      margin-right: 23px;
+      text-align: center;
+      color: #fff;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      border-top-left-radius: 9px;
+      border-top-right-radius: 9px;
+      background: #636363;
+    }
+    .footer:hover{
+      background: #3d3d3d;
+    }
+  </style>
+  <!-- style over -->
+</head>
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <h3 id="header">Onestep Signup</h3>
+      <div id="formcontrol">
+        <input id="username" placeholder="Username" type="text"/>
+        <input id="password" placeholder="Password" type="password"/>
+        <input id="cpassword" placeholder="Confirm Password" type="password"/>
+        <input id="email" placeholder="Email (optional/reset pass)" type="email"/>
+        <div><span id="forgot" onclick="reset_page()">Reset Password?</span></div>
+        <div><span id="signup_page" onclick="signup_page()">Back to Signup.</span></div>
+        <button id="signup" onclick="signup()" >Signup</button>
+        <button id="reset" onclick="reset()" >Reset</button>
+        <label id="msgid" style="text-align:center;opacity:0;color:red;transition:0.3s;">Message to be shown.</label>
+      </div>
+    </div>
+  </div>
+  <!-- importing login js -->
+  <script src="../js/signup.js" charset="utf-8"></script>
+</body>
+</html>

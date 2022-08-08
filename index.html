@@ -31,7 +31,7 @@
   <!-- splash screen ends -->
   <!-- modal start -->
   <!-- Login Modal -->
-  <div class="modal top fade" id="modallogin" tabindex="-1" aria-labelledby="modalloginlabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+  <!-- <div class="modal top fade" id="modallogin" tabindex="-1" aria-labelledby="modalloginlabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
     <div class="modal-dialog modal-fullscreen ">
       <div class="modal-content modal-bg">
         <div style="border: none;color:#fff" class="modal-header">
@@ -51,7 +51,7 @@
               <p> Password </p>
               <input type="text" name="" placeholder="Enter password"><br><br>
               <input type="submit" name="" value="login"><br>
-              <!--<a href="#"> Lost your password? </a><br>--->
+              <a href="#"> Lost your password? </a><br>
               <b><a href="register/register.html"> Register Here </a></b>
             </from>
           </div>
@@ -65,9 +65,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- Register Model -->
-  <div class="modal top fade" id="modalregister" tabindex="-1" aria-labelledby="modalregisterlabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+  <!-- <div class="modal top fade" id="modalregister" tabindex="-1" aria-labelledby="modalregisterlabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
     <div class="modal-dialog modal-fullscreen ">
       <div class="modal-content">
         <div class="modal-header">
@@ -83,7 +83,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- model ended -->
   
   <div class="collapse" id="navbarToggleExternalContent">
@@ -105,16 +105,49 @@
       aria-expanded="false"
       aria-label="Toggle navigation">
       <i class="fas fa-bars"></i>
-    </button>
-    <div class="ms-2"><img height="30px" src="material/logos/5.png" alt="logo"/></div>
-  </div>
-  <div class="d-flex align-items-center">
-    <button onclick="darkmode()" class="darkmodebtn"><i class="fas fa-moon"></i></button>
-    <button onclick="lightmode()" class="lightmodebtn"><i class="far fa-lightbulb"></i></button>
-    <button data-mdb-toggle="modal" data-mdb-target="#modallogin" type="button" class="btn btn-link px-3 me-2">Login</button>
-    <a href="register/register.html"><button data-mdb-toggle="modal" data-mdb-target="#modalregister" type="button" class="btn btn-primary me-3">Sign up for free</button></a>
-    <a class="btn btn-dark px-3" href="https://github.com/NurAktar/Recipe-Keeper" role="button"><i class="fab fa-github"></i></a>
-  </div>
+      </button>
+      <div class="ms-2"><img height="30px" src="material/logos/5.png" alt="logo"/></div>
+    </div>
+    <div class="d-flex align-items-center">
+      <button onclick="darkmode()" class="darkmodebtn"><i class="fas fa-moon"></i></button>
+      <button onclick="lightmode()" class="lightmodebtn"><i class="far fa-lightbulb"></i></button>
+      <!-- <button data-mdb-toggle="modal" data-mdb-target="#modallogin" type="button" class="btn btn-link px-3 me-2">Login</button> -->
+      <!-- <a href="register/register.html"><button data-mdb-toggle="modal" data-mdb-target="#modalregister" type="button" class="btn btn-primary me-3">Sign up for free</button></a> -->
+      <!-- <a class="btn btn-dark px-3" href="https://github.com/NurAktar/Recipe-Keeper" role="button"><i class="fab fa-github"></i></a> -->
+      <ul class="navbar-nav">
+        <!-- Avatar -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle d-flex align-items-center"
+            href="#"
+            id="navbarDropdownMenuLink"
+            role="button"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png"
+              class="rounded-circle"
+              height="22"
+              width="22"
+              alt="user pic"
+              loading="lazy"
+            />
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+            <li>
+              <a class="dropdown-item" href="#">Login</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Signup</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">Github</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
 </nav>
 <div style="max-width: 650px;" class="searchbar container">
   <div class="d-flex input-group w-auto">
