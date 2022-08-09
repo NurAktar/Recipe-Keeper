@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="loginbox">
+        <img src="../img/tomato.png" class="avatar">
+        <h1>Welcome back</h1>
+        <div>
+          <p> Username </p>
+          <input type="text" id="username" placeholder="Enter username">
+          <p> Password </p>
+          <input type="password" id="password" placeholder="Enter password"><br><br>
+          <input type="submit" onclick="login()" value="Login">
+          <br>
+          <a href="#"> Lost your password? </a><br>-
+          <b><a href="#"> Register Here </a></b>
+        </div>
+        <div id="msgid" style="color:red;text-align:center;margin-top: 25px;opacity: 0;transition: 0.5s;">msg will showup here</div>
+    </div>  
+</body>
+<script src="../js/login.js"></script>
+<script src="http://www.myersdaily.org/joseph/javascript/md5.js"></script>
+</html>

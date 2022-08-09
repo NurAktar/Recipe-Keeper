@@ -49,7 +49,6 @@
       border-bottom: 1px solid #9ff9f4;
       font-family:Ubuntu;
       font-size: 13px;
-      font-weight: ;
     }
     #formcontrol input:focus{
       color:#0068e2;
@@ -124,10 +123,8 @@
         <input id="password" placeholder="Password" type="password"/>
         <input id="cpassword" placeholder="Confirm Password" type="password"/>
         <input id="email" placeholder="Email (optional/reset pass)" type="email"/>
-        <div><span id="forgot" onclick="reset_page()">Reset Password?</span></div>
-        <div><span id="signup_page" onclick="signup_page()">Back to Signup.</span></div>
+        <div><a id="forgot" href="/recipe-keeper/assets/pages/login.html">Login page</a></div> <!--change before upload-->
         <button id="signup" onclick="signup()" >Signup</button>
-        <button id="reset" onclick="reset()" >Reset</button>
         <label id="msgid" style="text-align:center;opacity:0;color:red;transition:0.3s;">Message to be shown.</label>
       </div>
     </div>

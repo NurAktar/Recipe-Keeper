@@ -23,7 +23,46 @@ function lightmode(){
         recipecard[i].classList.toggle("recipe-div-dark");
     }
 }
-
+//login hash check
+function login_check(){
+    var profile = false;
+    let cookie = document.cookie.split(';');
+    let uname;let pass;
+    uname = cookie[1].split('=');
+    uname = uname[1];
+    pass = cookie[0].split('=');
+    pass = pass[1];
+    form_data = new FormData();
+    form_data.append('uname',uname);
+    form_data.append('pass',pass);
+    let req = new XMLHttpRequest();
+    req.open('POST','assets/pages/login_check.php');
+    req.send(form_data);
+    req.onreadystatechange = function(){
+        if(req.status == 200 && req.readyState == 4){
+            let response = req.responseText;
+            if(response != "invalid"){
+                //got profile
+                profile = response;
+                document.getElementById("userimg").src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=338&ext=jpg";
+                //profile menu
+                var pro_ul = "<li>";
+                pro_ul += "<a class='dropdown-item' href='#'>New Post</a>";
+                pro_ul += "</li>"
+                pro_ul += "<li>";
+                pro_ul += "<a class='dropdown-item' href='#'>Profile</a>";
+                pro_ul += "</li>";
+                pro_ul += "<li>";
+                pro_ul += "<a class='dropdown-item' href='#'>Github</a>";
+                pro_ul += "</li>";
+                document.getElementById("profile_menu").innerHTML=pro_ul;
+            }
+            else{
+                alert("something went wrong!.. try clearing cache.");
+            }
+        }
+    }
+}
 //show recipe ../ open recipe id
 function show_recipe(id){
     let query = id;
@@ -123,4 +162,5 @@ function search_up(n){
 // onload
 function loaded(){
     urlcheck();
+    login_check();
 }
