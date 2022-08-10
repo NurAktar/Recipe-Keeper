@@ -34,7 +34,8 @@ document.getElementsByClassName("searchbar")[0].addEventListener("keydown",(e)=>
 });
 
 //defocus of search result..
-document.addEventListener("click",()=>{if(document.querySelectorAll(".move").length > 0){
+document.addEventListener("click",()=>{
+    if(document.querySelectorAll(".list-group-item").length > 0){
     document.getElementById("search_result").innerHTML = '';
 }});
 

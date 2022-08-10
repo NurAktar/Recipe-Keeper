@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&family=Jost:wght@300&family=PT+Serif:ital@1&family=Raleway&family=Sacramento&family=Ubuntu:wght@300&display=swap');
 body{
     transition: 0.1s;
+    min-width: 334px;
 }
 nav{
     background-color: #fff;
@@ -43,8 +44,8 @@ nav{
 .recipe-card span{
     z-index: 1;
     position: absolute;
-    height: fit-content;
-    font-size: xx-large;
+    height: max-content;
+    font-size: 30px;
     display: flex;
     align-self: center;
     justify-self: center;
@@ -73,9 +74,15 @@ nav{
 .recipe-card div a{
     background-color: #ff7c88;
 }
+.my_container{
+    max-width: calc(354px * 4);
+}
 .wraper-cards{
-    margin:20px 0;
+    margin:20px auto;
     min-height: calc(100vh - 392.27px);
+    max-width: calc(354px * 4);
+    justify-content: flex-start;
+    padding:0;
 }
 /* recipe dark mode */
 .recipe-div-dark{
@@ -201,6 +208,17 @@ font-size: 16px;
     box-shadow:black 4px 4px 20px -10px;
     backdrop-filter: blur(6px);
 }
+#svg_div{
+    display: inline;
+    align-items: flex-start;
+    vertical-align: super;
+    background: #f9f9f9;
+    padding: 8px;
+    border-radius: 25px;
+}
+.svgs:hover > path{
+    stroke: #0059ff;
+}
 .banner{
     position:absolute;
     left: 0;
@@ -246,4 +264,21 @@ footer{
     width: 100%;
     background-color: #1e1e1e;
     color:#fff;
+}
+
+/* display cuts */
+@media screen and (max-width:1500px) {
+    .my_container{
+        max-width: calc(354px * 3);
+    }
+}
+@media screen and (max-width:1200px) {
+    .my_container{
+        max-width: calc(354px * 2);
+    }
+}
+@media screen and (max-width:760px) {
+    .my_container{
+        max-width: 354px;
+    }
 }

@@ -29,63 +29,6 @@
     <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
   </div>
   <!-- splash screen ends -->
-  <!-- modal start -->
-  <!-- Login Modal -->
-  <!-- <div class="modal top fade" id="modallogin" tabindex="-1" aria-labelledby="modalloginlabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
-    <div class="modal-dialog modal-fullscreen ">
-      <div class="modal-content modal-bg">
-        <div style="border: none;color:#fff" class="modal-header">
-          <h5 class="modal-title" id="modalloginlabel">Login</h5>
-          <button type="button" class="btn-close bg-super-light" data-mdb-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div class="wraper-login">
-          <div class="loginbox">
-            <img src="login/default.png" class="avatar">
-            <h1>Sign-In</h1>
-            <from>
-              <p> Email-id</p>
-              <input type="text" name="" placeholder="Enter Email id">
-              <p> Username </p>
-              <input type="text" name="" placeholder="enter username">
-              <p> Password </p>
-              <input type="text" name="" placeholder="Enter password"><br><br>
-              <input type="submit" name="" value="login"><br>
-              <a href="#"> Lost your password? </a><br>
-              <b><a href="register/register.html"> Register Here </a></b>
-            </from>
-          </div>
-        </div>
-        </div>
-        <div style="border: none;" class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-            Close
-          </button>
-          <button type="button" class="btn btn-primary" data-mdb-dismiss="modal" data-mdb-toggle="modal" data-mdb-target="#modalregister">Register</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
-  <!-- Register Model -->
-  <!-- <div class="modal top fade" id="modalregister" tabindex="-1" aria-labelledby="modalregisterlabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
-    <div class="modal-dialog modal-fullscreen ">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="modalregisterlabel">Register</h5>
-          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">...</div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-            Close
-          </button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-      </div>
-    </div>
-  </div> -->
-  <!-- model ended -->
-  
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-light p-4 dark-mode">
       <!--<h5 class="btn">Collapsed content</h5>-->
@@ -106,14 +49,11 @@
       aria-label="Toggle navigation">
       <i class="fas fa-bars"></i>
       </button>
-      <div class="ms-2"><img height="30px" src="material/logos/5.png" alt="logo"/></div>
+      <div class="ms-2"><img height="30px" src="assets/img/logo.png" alt="logo"/></div>
     </div>
     <div class="d-flex align-items-center">
       <button onclick="darkmode()" class="darkmodebtn"><i class="fas fa-moon"></i></button>
       <button onclick="lightmode()" class="lightmodebtn"><i class="far fa-lightbulb"></i></button>
-      <!-- <button data-mdb-toggle="modal" data-mdb-target="#modallogin" type="button" class="btn btn-link px-3 me-2">Login</button> -->
-      <!-- <a href="register/register.html"><button data-mdb-toggle="modal" data-mdb-target="#modalregister" type="button" class="btn btn-primary me-3">Sign up for free</button></a> -->
-      <!-- <a class="btn btn-dark px-3" href="https://github.com/NurAktar/Recipe-Keeper" role="button"><i class="fab fa-github"></i></a> -->
       <ul class="navbar-nav">
         <!-- Avatar -->
         <li class="nav-item dropdown">
@@ -160,8 +100,8 @@
   </div>
 </div>
 <!-- recipe cards ajax view -->
-<div id="recipe_card_wraper" class="wraper-cards container d-flex flex-wrap justify-content-around">
-  Loading..
+<div id="recipe_card_wraper" class="wraper-cards my_container d-flex flex-wrap justify-content-start">
+  <span style="font-size: 50px;margin:auto;">&lt;Loading/&gt;</span>
 </div>
 <footer>
   footer here...

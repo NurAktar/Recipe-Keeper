@@ -34,3 +34,16 @@ function login(){
         msgid.style.opacity=1;
     }
 }
+
+//triger inputs enter 
+let passinput = document.getElementById("password");
+document.getElementById("username").addEventListener("keydown",(e)=>{
+    if(e.key == 'Enter'){
+        passinput.focus();
+    }
+});
+passinput.addEventListener("keydown",(e)=>{
+    if(e.key == 'Enter'){
+        login();
+    }
+});

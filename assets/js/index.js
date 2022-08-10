@@ -23,42 +23,89 @@ function lightmode(){
         recipecard[i].classList.toggle("recipe-div-dark");
     }
 }
-//login hash check
-function login_check(){
-    var profile = false;
-    let cookie = document.cookie.split(';');
-    let uname;let pass;
-    uname = cookie[1].split('=');
-    uname = uname[1];
-    pass = cookie[0].split('=');
-    pass = pass[1];
-    form_data = new FormData();
-    form_data.append('uname',uname);
-    form_data.append('pass',pass);
-    let req = new XMLHttpRequest();
-    req.open('POST','assets/pages/login_check.php');
-    req.send(form_data);
-    req.onreadystatechange = function(){
-        if(req.status == 200 && req.readyState == 4){
-            let response = req.responseText;
-            if(response != "invalid"){
-                //got profile
-                profile = response;
-                document.getElementById("userimg").src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=338&ext=jpg";
-                //profile menu
-                var pro_ul = "<li>";
-                pro_ul += "<a class='dropdown-item' href='#'>New Post</a>";
-                pro_ul += "</li>"
-                pro_ul += "<li>";
-                pro_ul += "<a class='dropdown-item' href='#'>Profile</a>";
-                pro_ul += "</li>";
-                pro_ul += "<li>";
-                pro_ul += "<a class='dropdown-item' href='#'>Github</a>";
-                pro_ul += "</li>";
-                document.getElementById("profile_menu").innerHTML=pro_ul;
+//up_rate
+function up_rate(id){
+    if(profile != false){
+        form_data = new FormData();
+        form_data.append('up_rate','up_rate');
+        form_data.append('profile',profile);
+        form_data.append('id',id);
+        let req = new XMLHttpRequest();
+        req.open('POST','assets/pages/rating_system.php');
+        req.send(form_data);
+        req.onreadystatechange = function(){
+            if(req.status == 200 && req.readyState == 4){
+                let response = req.responseText;
+                if(response == 'done'){
+                    document.getElementById(id).style.stroke="#0077ff";
+                    let c_rate = parseInt(document.getElementById('rate'+id).innerText);
+                    c_rate +=1;
+                    document.getElementById('rate'+id).innerText=c_rate;
+                }
+                else{
+                    document.getElementById(id).style.stroke="#5e5e5e";
+                    let c_rate = parseInt(document.getElementById('rate'+id).innerText);
+                    c_rate -=1;
+                    document.getElementById('rate'+id).innerText=c_rate;
+                }
             }
-            else{
-                alert("something went wrong!.. try clearing cache.");
+        }
+    }
+    else{
+        alert("please login first!");
+    }
+}
+
+//signout
+function signout(){
+    document.cookie = "uname=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/recipe-keeper/;"; //change before upload
+    document.cookie = "pass=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/recipe-keeper/;"; //change before upload
+    window.location.assign('/recipe-keeper/'); //change before upload
+}
+
+//login hash check
+var profile = false;
+function login_check(){
+    if(!document.cookie.indexOf('uname=') == 0){
+    }
+    else{
+        let cookie = document.cookie.split(';');
+        let uname;let pass;
+        uname = cookie[0].split('=');
+        uname = uname[1];
+        pass = cookie[1].split('=');
+        pass = pass[1];
+        form_data = new FormData();
+        form_data.append('uname',uname);
+        form_data.append('pass',pass);
+        let req = new XMLHttpRequest();
+        req.open('POST','assets/pages/login_check.php');
+        req.send(form_data);
+        req.onreadystatechange = function(){
+            if(req.status == 200 && req.readyState == 4){
+                let response = req.responseText;
+                if(response != "invalid"){
+                    //got profile
+                    profile = response;
+                    document.getElementById("userimg").src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=338&ext=jpg";
+                    //profile menu
+                    var pro_ul = "<li>";
+                    pro_ul += "<a class='dropdown-item' href='#'>New Post</a>";
+                    pro_ul += "</li>"
+                    pro_ul += "<li>";
+                    pro_ul += "<a class='dropdown-item' href='#'>Profile</a>";
+                    pro_ul += "</li>";
+                    pro_ul += "<li>";
+                    pro_ul += "<a class='dropdown-item' href='#'>Github</a>";
+                    pro_ul += "</li>";
+                    pro_ul += "<li>";
+                    pro_ul += "<a class='dropdown-item' href='javascript:signout()'>Signout</a>";
+                    pro_ul += "</li>";
+                    document.getElementById("profile_menu").innerHTML=pro_ul;
+                }
+                else{
+                    alert("something went wrong!.. try clearing cache.");
+                }
             }
         }
     }
@@ -161,6 +208,6 @@ function search_up(n){
 
 // onload
 function loaded(){
-    urlcheck();
     login_check();
+    urlcheck();
 }

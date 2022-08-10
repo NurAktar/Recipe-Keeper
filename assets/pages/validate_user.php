@@ -27,7 +27,7 @@
     else{
       echo "valid";
       $profile = substr(md5(time()),0,10);
-      $sql = "CREATE TABLE $profile(id int NOT NULL,posts varchar(30),rate_id int)";
+      $sql = "CREATE TABLE $profile(id int NOT NULL PRIMARY KEY,posts varchar(30),up_rate int)";
       mysqli_query($conn,$sql);
       $sql = "INSERT INTO userspace(user,pass,email,profile) VALUES('$uname','$pass','$email','$profile')";
       $res = mysqli_query($conn,$sql);
