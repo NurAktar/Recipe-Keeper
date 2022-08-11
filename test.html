@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    hi
+    <button onclick="getcookie()">getcookie</button>
+</body>
+<script>
+    document.cookie = "test=new cookie;path=/";
+    function getcookie(){
+        let c = document.cookie.split(';');
+        let data;
+        c.forEach((row)=>{
+            if(row.includes('test')){
+                data = row.split('=')[1];
+            }
+        });
+        alert(data);
+    }
+</script>
+</html>

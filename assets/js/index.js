@@ -58,9 +58,9 @@ function up_rate(id){
 
 //signout
 function signout(){
-    document.cookie = "uname=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/recipe-keeper/;"; //change before upload
-    document.cookie = "pass=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/recipe-keeper/;"; //change before upload
-    window.location.assign('/recipe-keeper/'); //change before upload
+    document.cookie = "uname=; max-age=-1; path=/;"; //change before upload
+    document.cookie = "pass=; max-age=-1; path=/;"; //change before upload
+    window.location.assign('/'); //change before upload
 }
 
 //login hash check
@@ -71,10 +71,16 @@ function login_check(){
     else{
         let cookie = document.cookie.split(';');
         let uname;let pass;
-        uname = cookie[0].split('=');
-        uname = uname[1];
-        pass = cookie[1].split('=');
-        pass = pass[1];
+
+        cookie.forEach((row)=>{
+            if(row.includes('uname=')){
+                uname = row.split('=')[1];
+            }
+            else if(row.includes('pass=')){
+                pass = row.split('=')[1];
+            }
+        });
+
         form_data = new FormData();
         form_data.append('uname',uname);
         form_data.append('pass',pass);
@@ -90,13 +96,13 @@ function login_check(){
                     document.getElementById("userimg").src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?size=338&ext=jpg";
                     //profile menu
                     var pro_ul = "<li>";
-                    pro_ul += "<a class='dropdown-item' href='#'>New Post</a>";
+                    pro_ul += "<a class='dropdown-item' href='javascript:new_post()'>New Post</a>";
                     pro_ul += "</li>"
                     pro_ul += "<li>";
                     pro_ul += "<a class='dropdown-item' href='#'>Profile</a>";
                     pro_ul += "</li>";
                     pro_ul += "<li>";
-                    pro_ul += "<a class='dropdown-item' href='#'>Github</a>";
+                    pro_ul += "<a class='dropdown-item' href='https://github.com/NurAktar/Recipe-Keeper'>Github</a>";
                     pro_ul += "</li>";
                     pro_ul += "<li>";
                     pro_ul += "<a class='dropdown-item' href='javascript:signout()'>Signout</a>";
@@ -106,6 +112,56 @@ function login_check(){
                 else{
                     alert("something went wrong!.. try clearing cache.");
                 }
+            }
+        }
+    }
+}
+
+//new post
+function new_post(){
+    history.pushState(null,'','?newpost');
+    let html = "<div class='post_div'>";
+    html +="<h3>Upload your Recipe</h3>";
+    html +="<h5>Recipe Title</h5>";
+    html +="<input id='r_name' type='text' placeholder='Biriyani' maxlength='20'/>";
+    html +="<h5>Cooking Time</h5>";
+    html +="<input id='r_cooktime' type='text' pattern= '[0-9]' placeholder='Minutes' maxlength='2'/>";
+    html +="<h5>Ingredients</h5>";
+    html +="<textarea id='ingredient' rows='4' cols='50' placeholder='Onions, Carrots, Tomato, Potato,..' maxlength='200'></textarea>";
+    html +="<h4>Recipe Step-by-step</h4>";
+    html +="<textarea id='recipe_detail' rows='4' cols='50' placeholder='1) First boil 2cups of water.\n2) cut all vegitables. ' maxlength='200'></textarea>";
+    html +="<br><button class='btn btn-primary' onclick='mypost()'>Upload</button>";
+    html +="</div>";
+    document.getElementById('recipe_card_wraper').innerHTML = html;
+}
+function mypost(){
+    let cookie = document.cookie.split(';');
+        let uname;
+        uname = cookie[0].split('=');
+        uname = uname[1];
+    let r_name = document.getElementById("r_name").value;
+    let r_cooktime = document.getElementById("r_cooktime").value;
+    let ingredient = document.getElementById("ingredient").value;
+    let recipe_detail = document.getElementById("recipe_detail").value;
+
+    let form_data = new FormData();
+    form_data.append('name',r_name);
+    form_data.append('cooktime',r_cooktime);
+    form_data.append('ingredient',ingredient);
+    form_data.append('detail',recipe_detail);
+    form_data.append('user',uname);
+    form_data.append('profile',profile);
+    let req = new XMLHttpRequest();
+    req.open('POST','assets/pages/mypost.php');
+    req.send(form_data);
+    req.onreadystatechange = function(){
+        if(req.status == 200 && req.readyState == 4){
+            if(req.responseText == 'done'){
+                let html ="<h1>Recipe Uploaded!</h1>";
+                document.getElementById('recipe_card_wraper').innerHTML = html;
+            }
+            else{
+                alert("something wrong! [err=30mxdh]\nplease inform owner.");
             }
         }
     }
@@ -186,6 +242,9 @@ function urlcheck(){
         else{
             document.getElementById('recipe_card_wraper').innerHTML = 'Try something new today :)';
         }
+    }
+    else if(url.get('newpost') != null){
+        new_post();
     }
     else{
         homepage_content();

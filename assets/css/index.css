@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400;700&family=Jost:wght@300&family=PT+Serif:ital@1&family=Raleway&family=Sacramento&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@1&family=Jost:wght@300&family=Ubuntu:wght@300&display=swap');
+
 body{
     transition: 0.1s;
     min-width: 334px;
@@ -198,7 +199,29 @@ font-size: 16px;
 
     color: #ffc107;
 }
-
+.post_div{
+    margin: auto;
+    font-family: ubuntu;
+    font-weight: bold;
+    padding: 19px;
+    border-radius: 15px;
+    box-shadow: black 3px 3px 21px -14px;
+}
+.post_div input,textarea{
+    outline: none;
+    border: none;
+    font-family: jost;
+    border: 2px solid #ffc3c3;
+    border-right: none;
+    border-bottom: none;
+    box-shadow: black 5px 5px 6px -9px;
+    border-radius: 5px;
+    padding: 5px 7px;
+    margin: 8px 0;
+}
+.post_div input{
+    width:250px;
+}
 /* show recipe css here */
 .recipe_view{
     border-radius: 17px;
@@ -236,7 +259,8 @@ font-size: 16px;
     font-weight: 600;
     padding:40px;
     /* background-image: url("https://images.unsplash.com/photo-1658307821614-4ffbb8cb4e7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80"); */
-    background-image: url("https://images.unsplash.com/photo-1539136788836-5699e78bfc75?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
+    /* background-image: url("https://images.unsplash.com/photo-1539136788836-5699e78bfc75?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"); */
+    background-image: url("https://images.unsplash.com/photo-1627888086271-6c8546b2977c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1619&q=80");
     background-size: cover;
     background-position: center;
     border-radius: 17px 17px 0 0;
@@ -248,6 +272,7 @@ font-size: 16px;
     padding: 35px 35px 0 35px;
     font-size: 30px;
     font-family: fantasy;
+    word-break: break-word;
 }
 .process span{
     font-size: 25px;
@@ -280,5 +305,34 @@ footer{
 @media screen and (max-width:760px) {
     .my_container{
         max-width: 354px;
+    }
+    .post_div{
+        translate: -52px;
+    }
+    .banner_name{
+        width: 480px;
+    }
+    .recipe_view{
+        width: fit-content;
+        translate: -63px;
+    }
+}
+@media screen and (max-width:525px) {
+    .post_div{
+        width: 354px;
+        translate: 0;
+    }
+    .post_div textarea{
+        width: 100%;
+    }
+    .post_div input{
+        width: 80%;
+    }
+    .banner_name{
+        width: 100%;
+    }
+    .recipe_view{
+        width: 100%;
+        translate: 0;
     }
 }

@@ -16,9 +16,9 @@ function login(){
                 var response = req.responseText;
                 if(response == "login"){
                     let pass_hash = md5(pass);
-                    document.cookie = "uname="+uname+";max-age=259200;path=/recipe-keeper/;secure;";
-                    document.cookie = "pass="+pass_hash+";max-age=259200;path=/recipe-keeper/;secure;";
-                    window.location.assign("/recipe-keeper/");
+                    document.cookie = "uname="+uname+";max-age=259200;path=/;secure;"; //change before upload
+                    document.cookie = "pass="+pass_hash+";max-age=259200;path=/;secure;"; //change before upload
+                    window.location.assign("/"); //change before upload
                 }
                 else{
                     msgid = document.getElementById("msgid");

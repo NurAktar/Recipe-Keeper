@@ -88,9 +88,9 @@ function signup(){
         var response = req.responseText;
         if(response == 'valid'){
           //code for valid
-          document.cookie = "uname="+uname+";max-age=60*60*5;path=/;";
-          document.cookie = "pass="+pass+";max-age=60*60*5;path=/;";
-          window.location.assign('/recipe-keeper/');//change before upload to server.
+          document.cookie = "uname="+uname+";max-age=60*60*5;path=/;secure;"; //change before upload to server.
+          document.cookie = "pass="+pass+";max-age=60*60*5;path=/;secure;"; //change before upload to server.
+          window.location.assign('/'); //change before upload to server.
         }
         else{
           //code for invalid

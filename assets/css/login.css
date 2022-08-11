@@ -6,7 +6,7 @@ body{
     height: 100vh;
     margin: 0;
     padding: 0;
-    background: url(../img/bgfood.jpg);
+    background: url("https://images.unsplash.com/photo-1643995529773-686d81fd51aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
     background-size: cover;
 }
 .loginbox{
