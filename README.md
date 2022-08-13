@@ -1,5 +1,6 @@
 # Recipe-Keeper
-website: https://recipekeeper.42web.io
+url: https://recipekeeper.42web.io
+<br>
 Search and Try recipes at home. 
 <hr>
 
