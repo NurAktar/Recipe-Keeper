@@ -66,7 +66,7 @@ function signout(){
 //login hash check
 var profile = false;
 function login_check(){
-    if(!document.cookie.indexOf('uname=') == 0){
+    if(!document.cookie.includes('uname=')){
     }
     else{
         let cookie = document.cookie.split(';');
@@ -102,7 +102,7 @@ function login_check(){
                     pro_ul += "<a class='dropdown-item' href='#'>Profile</a>";
                     pro_ul += "</li>";
                     pro_ul += "<li>";
-                    pro_ul += "<a class='dropdown-item' href='https://github.com/NurAktar/Recipe-Keeper'>Github</a>";
+                    pro_ul += "<a class='dropdown-item' target='_blank' href='https://github.com/NurAktar/Recipe-Keeper'>Github</a>";
                     pro_ul += "</li>";
                     pro_ul += "<li>";
                     pro_ul += "<a class='dropdown-item' href='javascript:signout()'>Signout</a>";
@@ -126,20 +126,25 @@ function new_post(){
     html +="<input id='r_name' type='text' placeholder='Biriyani' maxlength='20'/>";
     html +="<h5>Cooking Time</h5>";
     html +="<input id='r_cooktime' type='text' pattern= '[0-9]' placeholder='Minutes' maxlength='2'/>";
+    html +="<h5>Overview</h5>";
+    html +="<textarea id='overview' rows='2' cols='50' placeholder='Tell about your recipe in two line.' maxlength='300'></textarea>";
     html +="<h5>Ingredients</h5>";
-    html +="<textarea id='ingredient' rows='4' cols='50' placeholder='Onions, Carrots, Tomato, Potato,..' maxlength='200'></textarea>";
+    html +="<textarea id='ingredient' rows='3' cols='50' placeholder='Onions, Carrots, Tomato, Potato,..' maxlength='325'></textarea>";
     html +="<h4>Recipe Step-by-step</h4>";
-    html +="<textarea id='recipe_detail' rows='4' cols='50' placeholder='1) First boil 2cups of water.\n2) cut all vegitables. ' maxlength='200'></textarea>";
+    html +="<textarea id='recipe_detail' rows='4' cols='50' placeholder='1) First boil 2cups of water.\n2) cut all vegitables.'></textarea>";
     html +="<br><button class='btn btn-primary' onclick='mypost()'>Upload</button>";
     html +="</div>";
     document.getElementById('recipe_card_wraper').innerHTML = html;
 }
 function mypost(){
     let cookie = document.cookie.split(';');
-        let uname;
-        uname = cookie[0].split('=');
-        uname = uname[1];
+    let uname;
+    cookie.forEach((row)=>{
+    if(row.includes('uname=')){
+        uname = row.split('=')[1];
+    }});
     let r_name = document.getElementById("r_name").value;
+    let overview = document.getElementById("overview").value;
     let r_cooktime = document.getElementById("r_cooktime").value;
     let ingredient = document.getElementById("ingredient").value;
     let recipe_detail = document.getElementById("recipe_detail").value;
@@ -147,6 +152,7 @@ function mypost(){
     let form_data = new FormData();
     form_data.append('name',r_name);
     form_data.append('cooktime',r_cooktime);
+    form_data.append('overview',overview);
     form_data.append('ingredient',ingredient);
     form_data.append('detail',recipe_detail);
     form_data.append('user',uname);
@@ -157,8 +163,10 @@ function mypost(){
     req.onreadystatechange = function(){
         if(req.status == 200 && req.readyState == 4){
             if(req.responseText == 'done'){
-                let html ="<h1>Recipe Uploaded!</h1>";
+                let html ="<h1 style='width:100%;text-align:center;align-self: end;'>Recipe Uploaded!</h1>";
+                html += "<p style='width:100%;text-align:center;'>Loading homepage in 3 seconds...</p>";
                 document.getElementById('recipe_card_wraper').innerHTML = html;
+                setTimeout(()=>{homepage_content()},3000);
             }
             else{
                 alert("something wrong! [err=30mxdh]\nplease inform owner.");
@@ -228,6 +236,7 @@ function urlcheck(){
         if(query.length > 0){
             var form_data = new FormData();
             form_data.append('query',query);
+            form_data.append('res_start',0);
             var ajax_request = new XMLHttpRequest();
             ajax_request.open('POST','assets/pages/searched_query.php');
             ajax_request.send(form_data);
@@ -240,7 +249,8 @@ function urlcheck(){
             }
         }
         else{
-            document.getElementById('recipe_card_wraper').innerHTML = 'Try something new today :)';
+            // document.getElementById('recipe_card_wraper').innerHTML = 'Try something new today :)';
+            homepage_content();
         }
     }
     else if(url.get('newpost') != null){

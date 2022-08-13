@@ -10,11 +10,15 @@ if(isset($_POST['query'])){
         <div class="banner_name">
             <h1><?php echo $row['name']; ?></h1>
             <h6>Posted by: <?php echo $row['author']; ?></h6>
-            <h6>Cooking time <?php echo $row['cooktime']; ?></h6>
+            <h6>Cooking time <?php echo $row['cooktime']; ?> minutes</h6>
+        </div>
+        <div class="process">
+            <h3>Overview:</h3>
+            <span><?php echo $row['overview'];?></span>
         </div>
         <div class="process">
             <h3>Ingradients:</h3>
-            <span>carrots,cabbage,onion,potato,oil,butter,chili</span>
+            <span><?php echo $row['ingredient'];?></span>
         </div>
         <div class="process">
             <h3>Recipe:</h3>

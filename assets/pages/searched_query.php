@@ -1,10 +1,17 @@
 <?php
 include "db_conn.php";
-if(isset($_POST['query'])){
+if(isset($_POST['query']) && isset($_POST['res_start'])){
     $q = $_POST['query'];
-    $sql = "SELECT * FROM recipe_list WHERE name LIKE '$q%' UNION SELECT * FROM recipe_list WHERE( name LIKE '%$q%' OR detail LIKE '%$q%' ) LIMIT 12";
+    $res_start = $_POST['res_start'];
+    $res_end = $res_start+12;
+
+    $sql = "SELECT * FROM recipe_list WHERE name LIKE '$q%' UNION SELECT * FROM recipe_list WHERE( name LIKE '%$q%' OR overview LIKE '%$q%' )";
     $res = mysqli_query($conn,$sql);
-    $img = rand(0,11);
+    $next = mysqli_num_rows($res);
+
+    $sql = "SELECT * FROM recipe_list WHERE name LIKE '$q%' UNION SELECT * FROM recipe_list WHERE( name LIKE '%$q%' OR overview LIKE '%$q%' ) LIMIT $res_start,$res_end";
+    $res = mysqli_query($conn,$sql);
+    $img = rand(0,34);
     while($row = mysqli_fetch_assoc($res)){?>
         <div class="recipe-card">
             <span><?php echo $row['cooktime']." Min Cook"; ?></span>
@@ -12,7 +19,7 @@ if(isset($_POST['query'])){
             <img src="assets/img/<?php echo $img.".jpg"; ?>" alt="not loaded"/>
             <div>
                 <h5 class="card-title"><?php echo $row['name']; ?></h5>
-                <p class="card-text"><?php echo $row['detail']; ?></p>
+                <p class="card-text"><?php echo $row['overview']; ?></p>
                 <a href="javascript:show_recipe(<?php echo $row['id']; ?>);" class="btn btn-primary">Cook</a>
                 <div id="svg_div">
                     <a href="javascript:up_rate(<?php echo $row['id'];?>)" style="background:none;">
@@ -34,12 +41,17 @@ if(isset($_POST['query'])){
                 </div>
             </div>
         </div><?php
-        if($img >= 11){
+        if($img >= 34){
             $img = 0;
         }
         else{
             $img++;
         }
+    }?>
+    <!-- button -->
+    <?php
+    if($next > $res_end){?>
+        <button onclick='next_page(this)' value='<?php echo $res_end?>'>Next</button><?php
     }
 }
 ?>

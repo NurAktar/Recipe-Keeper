@@ -46,6 +46,7 @@ function searched(){
     if(query.length > 0){
         var form_data = new FormData();
         form_data.append('query',query);
+        form_data.append('res_start',0);
         var ajax_request = new XMLHttpRequest();
         ajax_request.open('POST','assets/pages/searched_query.php');
         ajax_request.send(form_data);
@@ -58,7 +59,33 @@ function searched(){
         }
     }
     else{
-        document.getElementById('recipe_card_wraper').innerHTML = 'Try something new today :)';
+        // document.getElementById('recipe_card_wraper').innerHTML = 'Try something new today :)';
+        homepage_content();
+    }
+}
+// Next page // pagination
+function next_page(num){
+    var query = document.getElementById("searchq").value;
+    let res_start = num.value;
+    search_up(query);
+    if(query.length > 0){
+        var form_data = new FormData();
+        form_data.append('query',query);
+        form_data.append('res_start',res_start);
+        var ajax_request = new XMLHttpRequest();
+        ajax_request.open('POST','assets/pages/searched_query.php');
+        ajax_request.send(form_data);
+        ajax_request.onreadystatechange = function(){
+            if(ajax_request.readyState == 4 && ajax_request.status == 200){
+                var response = ajax_request.responseText;
+                document.getElementById('recipe_card_wraper').innerHTML = response;
+                document.getElementById('search_result').innerHTML = '';
+            }
+        }
+    }
+    else{
+        // document.getElementById('recipe_card_wraper').innerHTML = 'Try something new today :)';
+        homepage_content();
     }
 }
 

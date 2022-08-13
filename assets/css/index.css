@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@1&family=Jost:wght@300&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@1&&family=Jost:wght@300&family=Major+Mono+Display&family=Open+Sans&family=Ubuntu:wght@300;400;500&display=swap');
 
 body{
     transition: 0.1s;
@@ -46,25 +46,29 @@ nav{
     z-index: 1;
     position: absolute;
     height: max-content;
-    font-size: 30px;
+    font-size: 21px;
+    font-weight: bold;
     display: flex;
+    padding-left: 10px;
     align-self: center;
     justify-self: center;
     color: white;
-    font-family: fantasy;
+    font-family: 'Major Mono Display', monospace;
     writing-mode: vertical-rl;
     /* text-orientation: upright; */
 }
 .recipe-card img{
     width:90px;
     object-fit: cover;
-    filter: saturate(2) blur(1px) brightness(0.8);
+    filter: saturate(1.5) brightness(0.7);
 }
 .recipe-card div{
     padding: 15px;
     width: 250px;
+    font-family: 'ubuntu';
 }
 .recipe-card div p{
+    font-family: 'open sans';
     overflow: hidden;
     height: 76.78px;
     text-overflow: ellipsis;
@@ -208,6 +212,7 @@ font-size: 16px;
     box-shadow: black 3px 3px 21px -14px;
 }
 .post_div input,textarea{
+    white-space: pre-wrap;
     outline: none;
     border: none;
     font-family: jost;
@@ -226,10 +231,8 @@ font-size: 16px;
 .recipe_view{
     border-radius: 17px;
     width: 100%;
-    height: 700px;
     /* background-color: #f3f3f3; */
     box-shadow:black 4px 4px 20px -10px;
-    backdrop-filter: blur(6px);
 }
 #svg_div{
     display: inline;
@@ -266,17 +269,18 @@ font-size: 16px;
     border-radius: 17px 17px 0 0;
 }
 .banner_name h6{
-    font-weight: 700;
+    font-weight: 400;
 }
 .process{
-    padding: 35px 35px 0 35px;
+    padding: 35px;
     font-size: 30px;
-    font-family: fantasy;
+    font-family: 'ubuntu';
     word-break: break-word;
 }
 .process span{
-    font-size: 25px;
-    font-family: sans-serif;
+    white-space: pre-wrap;
+    font-size: 1.2rem;
+    font-family: 'Open Sans';
 }
 .recipe_body{
     background-image: url("https://img.freepik.com/free-vector/cactus-pattern-collection-concept_23-2148625237.jpg?w=740&t=st=1659692137~exp=1659692737~hmac=0021749902f4d56ac129fb526e679e7cdfed98faf62f26346c0f1462fb590887");
@@ -285,6 +289,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 222px;
     width: 100%;
     background-color: #1e1e1e;

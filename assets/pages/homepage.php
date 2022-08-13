@@ -5,10 +5,10 @@ if(isset($_POST['home'])){
     // popular post
     $sql = "SELECT * FROM recipe_list ORDER BY up_rate DESC LIMIT 9";
     $res = mysqli_query($conn,$sql);
-    $img = rand(0,11); ?>
+    $img = rand(0,34); ?>
 
     
-    <h1 style="width:100%;font-family:fantasy;padding-left:20px;">Popular post:</h1>
+    <h1 style="width:100%;font-family:'Alumni Sans Pinstripe';font-weight:bold;padding-left:20px;">Popular post:</h1>
     <?php
     while($row = mysqli_fetch_assoc($res)){?>
         <div class="recipe-card">
@@ -16,7 +16,7 @@ if(isset($_POST['home'])){
             <img src="assets/img/<?php echo $img.".jpg"; ?>" alt="not loaded"/>
             <div>
                 <h5 class="card-title"><?php echo $row['name']; ?></h5>
-                <p class="card-text"><?php echo $row['detail']; ?></p>
+                <p class="card-text"><?php echo $row['overview']; ?></p>
                 <a href="javascript:show_recipe(<?php echo $row['id']; ?>);" class="btn btn-primary">Cook</a>
                 <div id="svg_div">
                     <a href="javascript:up_rate(<?php echo $row['id'];?>)" style="background:none;">
@@ -38,7 +38,7 @@ if(isset($_POST['home'])){
                 </div>
             </div>
         </div><?php
-        if($img >= 11){
+        if($img >= 34){
             $img = 0;
         }
         else{
@@ -50,7 +50,7 @@ if(isset($_POST['home'])){
     $sql = "SELECT * FROM recipe_list ORDER BY id DESC LIMIT 9";
     $res = mysqli_query($conn,$sql); ?>
 
-    <h1 style="width:100%;font-family:fantasy;padding:20px;padding-bottom:0;">Recent post:</h1>
+    <h1 style="width:100%;font-family:'Alumni Sans Pinstripe';font-weight:bold;padding:20px;padding-bottom:0;">Recent post:</h1>
     <?php
     while($row = mysqli_fetch_assoc($res)){?>
         <div class="recipe-card">
@@ -58,7 +58,7 @@ if(isset($_POST['home'])){
             <img src="assets/img/<?php echo $img.".jpg"; ?>" alt="not loaded"/>
             <div>
                 <h5 class="card-title"><?php echo $row['name']; ?></h5>
-                <p class="card-text"><?php echo $row['detail']; ?></p>
+                <p class="card-text"><?php echo $row['overview']; ?></p>
                 <a href="javascript:show_recipe(<?php echo $row['id']; ?>);" class="btn btn-primary">Cook</a>
                 <div id="svg_div">
                     <a href="javascript:up_rate(<?php echo $row['id'];?>)" style="background:none;">
@@ -80,7 +80,7 @@ if(isset($_POST['home'])){
                 </div>
             </div>
         </div><?php
-        if($img >= 11){
+        if($img >= 34){
             $img = 0;
         }
         else{

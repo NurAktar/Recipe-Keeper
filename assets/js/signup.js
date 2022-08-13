@@ -88,6 +88,7 @@ function signup(){
         var response = req.responseText;
         if(response == 'valid'){
           //code for valid
+          pass = md5(pass);
           document.cookie = "uname="+uname+";max-age=60*60*5;path=/;secure;"; //change before upload to server.
           document.cookie = "pass="+pass+";max-age=60*60*5;path=/;secure;"; //change before upload to server.
           window.location.assign('/'); //change before upload to server.
