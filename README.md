@@ -8,4 +8,4 @@ Search and Try recipes at home.
 
 # Overview
 
-![image](https://github.com/SubhadipNag/Recipe-Keeper/blob/main/material/logos/overview.png)
+![image](https://user-images.githubusercontent.com/84139612/184476620-eb2d5854-c19b-4487-b946-a7173a8403ae.png)
